@@ -1,0 +1,15 @@
+services:
+  college-portal:
+    build: .
+    restart: unless-stopped
+    env_file:
+      - .env
+    ports:
+      - "3000:3000"
+    volumes:
+      - college_uploads:/app/uploads
+      - college_data:/app/data
+
+volumes:
+  college_uploads:
+  college_data:
